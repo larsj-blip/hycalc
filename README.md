@@ -6,4 +6,12 @@
 - python
 - npm
 - vue
-- 
+- nvm
+
+
+install python requirements:
+create a virtual environment, and activate it.
+
+install python dependencies with an activated environment with:
+
+`pip install -r requirements.txt`
