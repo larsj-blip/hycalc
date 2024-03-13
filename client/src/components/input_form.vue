@@ -26,7 +26,6 @@ function update_values_in_store() {
     <input type="number" id="payload_weight" v-model="payload_weight" placeholder="400"/>
   </form>
 
-<h1>{{distance_traveled}}</h1>
 
 </template>
 
