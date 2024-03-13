@@ -12,8 +12,8 @@ import index from './components/input_form.vue'
       <index />
 
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <button type="button" class="btn btn-link"><RouterLink to="/">Home</RouterLink></button>
+        <button type="button" class="btn btn-link"><RouterLink to="/results">results</RouterLink></button>
       </nav>
     </div>
   </header>

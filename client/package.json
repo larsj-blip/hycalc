@@ -9,14 +9,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.8",
     "@vueform/vueform": "^1.8.0",
     "axios": "^1.6.7",
+    "bootstrap": "^5.3.3",
     "pinia": "^2.1.7",
     "vue": "^3.4.15",
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.3",
+    "sass": "^1.71.1",
     "vite": "^5.0.11"
   }
 }

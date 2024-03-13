@@ -1,15 +1,15 @@
 <script setup>
-import { onUpdated, ref, } from 'vue'
-import { useFormStore } from '../stores/form_store.js'
+import {onUpdated, ref,} from 'vue'
+import {useFormStore} from '../stores/form_store.js'
 
 const form_store = useFormStore()
 const distance_traveled = ref(0);
 const payload_weight = ref(0);
 
 
-
-onUpdated(() =>{console.log(distance_traveled.value)
-update_values_in_store()
+onUpdated(() => {
+  console.log(distance_traveled.value)
+  update_values_in_store()
 })
 
 function update_values_in_store() {
@@ -20,10 +20,15 @@ function update_values_in_store() {
 <template>
 
   <form>
-    <label for="distance_traveled">Distance traveled</label>
-    <input type="number" id="distance_traveled"v-model="distance_traveled" placeholder="100"/>
-    <label for="payload_weight">Payload weight</label>
-    <input type="number" id="payload_weight" v-model="payload_weight" placeholder="400"/>
+    <div class="form-group">
+      <label for="distance_traveled">Distance traveled</label>
+      <input class="form-control" type="number" id="distance_traveled" v-model="distance_traveled" placeholder="100"/>
+    </div>
+    <div class="form-group">
+      <label for="payload_weight">Payload weight</label>
+    <input class="form-control" type="number" id="payload_weight" v-model="payload_weight" placeholder="400"/>
+    </div>
+
   </form>
 
 
