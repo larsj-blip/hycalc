@@ -134,7 +134,7 @@ data_to_send = ["number_of_refuels", "percent_left_in_tank", "minutes_spent_refu
 types_of_trucks = ["CH2_350bar", "CH2_700bar", "LH2", "Battery", "Diesel"]
 
 
-def refuel_data(user_range):
+def calc_refueling(user_range):
     """
     Description:
         takes the input "user_range" to calculate the number of refuels
@@ -150,11 +150,11 @@ def refuel_data(user_range):
         n_refuels (list)
     """
 
-    n_refuels_350 = calc_refuels(user_range, r_350bar_avg)
-    n_refuels_700 = calc_refuels(user_range, r_700bar_avg)
-    n_refuels_L = calc_refuels(user_range, r_L_avg)
-    n_refuels_bat = calc_refuels(user_range, r_bat_avg)
-    n_refuels_dies = calc_refuels(user_range, r_dies_avg)
+    n_refuels_350 = user_range / r_350bar_avg
+    n_refuels_700 = user_range / r_700bar_avg
+    n_refuels_L = user_range / r_L_avg
+    n_refuels_bat = user_range / r_bat_avg
+    n_refuels_dies = user_range / r_dies_avg
     
     n_refuels_floats = [n_refuels_350, n_refuels_700, n_refuels_L, n_refuels_bat, n_refuels_dies]
     fuel_charge_left_list = []
@@ -178,7 +178,3 @@ def refuel_data(user_range):
         all_data_dict[data_to_send[i]] = idict
         
     return all_data_dict
-
-def calc_refuels(user_range, range):
-    n_refuels = user_range / range
-    return n_refuels
