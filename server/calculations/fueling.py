@@ -138,11 +138,7 @@ def calc_refueling(user_range):
     """
     Description:
         takes the input "user_range" to calculate the number of refuels
-    
-    TO DO:
-        rounding
-        total refueling time
-        
+            
     Args:
         user_range: the input from the user with their desired trucking range (int, float)
     

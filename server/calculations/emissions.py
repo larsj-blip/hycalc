@@ -20,5 +20,16 @@ emissions_list = [814.1, 627.0, 786.4, 861.7, 783.5, 696.9, 873.3, 854.1, 806.5]
 emissions_avg_per_km = np.average(emissions_list)
 
 def calc_emissions(user_range):
+    """
+    Description:
+        takes the input "user_range" to calculate the total amount of CO2 emissions
+            
+    Args:
+        user_range: the input from the user with their desired trucking range (int, float)
+    
+    Returns:
+        total_emissonis (float)
+    """
     total_emissions = user_range * emissions_avg_per_km
-    return total_emissions
+    total_emissions /= 1000
+    return round(total_emissions,1)
