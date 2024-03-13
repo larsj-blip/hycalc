@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import index from './components/input_form.vue'
 </script>
 
 <template>
@@ -9,12 +9,11 @@ import HelloWorld from './components/HelloWorld.vue'
 
     <div class="wrapper">
 <!--      <HelloWorld msg="You did it!" />-->
-      <HelloWorld />
+      <index />
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/licence">hello</RouterLink>
       </nav>
     </div>
   </header>
