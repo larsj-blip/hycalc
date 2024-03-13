@@ -26,7 +26,7 @@ def cost_of_producing_1_kg_hydrogen():
 #Liquid requires 10-13 KWh/kg LH2
 Check_engine_variable = ""
 Cost_per_kg = 0
-User_input_distance = 0
+User_input_distance = 0 #Kilometer input i integer
 
 def cost_of_your_engine_per_kg():
     if (Check_engine_variable == "treefifty"):
