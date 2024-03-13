@@ -70,7 +70,6 @@ fcon_source2 = 12
 fcon_source3 = 13
 fcon_700bar_list = [fcon_source2, fcon_source3]
 fcon_700bar_avg = np.average(fcon_700bar_list)
-
     
 #LIQUID HYDROGEN
 #range (full tank) [km]
