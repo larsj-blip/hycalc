@@ -15,15 +15,16 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: npm install, build and upload
+      - name: npm install and build
         run: |
           cd client
-          npm install
+          npm ci
           npm run build --if-present
           cd ..
           rm -rf server/static
           mkdir static
           mv client/dist server/static
+      - name: commit back to repo
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           add_options: 'server/static'
