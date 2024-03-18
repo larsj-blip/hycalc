@@ -1,5 +1,5 @@
 runtime: python310
-entrypoint: gunicorn -b :$PORT server:create_app()
+entrypoint: gunicorn -b :$PORT server:create_app\(\)
 
 handlers:
   - url: /.*
