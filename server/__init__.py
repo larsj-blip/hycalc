@@ -1,6 +1,11 @@
 import os
 
-from flask import Flask, render_template
+import requests
+from flask import Flask, render_template, request, jsonify
+
+from server import calculations
+from server.calculations.fueling import refuel_data
+from server.calculations.price_calculation import total_cost_of_driving_your_vehicle
 
 
 def create_app(test_config=None):
@@ -24,10 +29,16 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    # a simple page that says hello
     @app.route('/')
-    def hello():
+    def index():
         return render_template('index.html')
+
+    @app.route('/api/calculate/truck', methods=['POST'])
+    def calculate_data_for_truck():
+        form_data = request.json
+        distance_traveled = form_data['distance_traveled']
+        refuel_data_object = refuel_data(distance_traveled)
+        return jsonify(refuel_data_object)
 
     @app.route('/help')
     def help():

@@ -1,20 +1,42 @@
 <script setup>
+import {onMounted} from "vue";
 
+axios.defaults.baseURL = 'http://localhost:5000';
+
+
+
+import axios from "axios";
+import {useFormStore} from "@/stores/form_store.js";
+
+const store = useFormStore()
+const transport_types = ["Battery", "CH2_350bar", "CH2_700bar", "Diesel", "LH2"]
 const calculations = {
-  headers: ["hello", "yoo"],
-  data: [
-    {
-      type: "car",
-      hello: "hi",
-      yoo: "y"
-    },
-    {
-      type: "truck",
-      hello: "boo",
-      yoo: "ba"
-    }
-  ]
+  headers: ["minutes_spent_refueling", "number_of_refuels", "percent_left_in_tank"],
+  // data:
+  //   {
+  //     "minutes_spent_refueling": {'Battery': 0.0, 'CH2_350bar': 0.0, 'CH2_700bar': 0.0, 'Diesel': 0.0, 'LH2': 0.0},
+  //     "number_of_refuels": {'Battery': 0, 'CH2_350bar': 0, 'CH2_700bar': 0, 'Diesel': 0, 'LH2': 0},
+  //     "percent_left_in_tank": {'Battery': 74, 'CH2_350bar': 87, 'CH2_700bar': 87, 'Diesel': 95, 'LH2': 89},
+  //   }
 }
+
+onMounted(()=> {
+  axios.post('/api/calculate/truck',
+    store.get_store_as_json(), {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+).then(function (response) {
+  calculations.data = response.data
+})
+
+})
+
+console.log(calculations.data)
+
+
+
 </script>
 
 <template>
@@ -25,14 +47,14 @@ const calculations = {
   <table class="table table-striped table-bordered">
     <thead>
     <tr>
-      <th scope="col" >type</th>
+      <th scope="col">type</th>
       <th scope="col" v-for="header in calculations.headers">{{ header }}</th>
     </tr>
     </thead>
     <tbody>
-    <tr v-for="row in calculations.data">
-      <th scope="row">{{row.type}}</th>
-      <td v-for="column in calculations.headers">{{ row[column] }}</td>
+    <tr v-if="calculations.data" v-for="locomotion_type in transport_types">
+      <th scope="row">{{ locomotion_type }}</th>
+      <td v-for='datapoint in calculations.headers'>{{ calculations.data[datapoint][locomotion_type] }}</td>
     </tr>
     </tbody>
   </table>
