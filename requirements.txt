@@ -29,3 +29,5 @@ urllib3==2.2.1
 
 
 Werkzeug==3.0.1
+
+assertpy~=1.1

@@ -26,7 +26,7 @@ def cost_of_producing_1_kg_hydrogen():
 #Liquid requires 10-13 KWh/kg LH2
 Check_engine_variable = ""
 Cost_per_kg = 0
-User_input_distance = 0 #Kilometer input i integer
+# User_input_distance = 0 #Kilometer input i integer
 
 def cost_of_your_engine_per_kg():
     if (Check_engine_variable == "treefifty"):
@@ -41,19 +41,19 @@ def cost_of_your_engine_per_kg():
         return Cost_per_kg
 
 
-def total_cost_of_driving_your_vehicle():
+def total_cost_of_driving_your_vehicle(user_input_distance):
     #350: 13.166 km/kg H2
     #700: 12.5 km/kg
     #Liquid: 14.65 km/kg
     if (Check_engine_variable == "treefifty"):
-        Total_cost = Cost_per_kg * User_input_distance/13.166 # kg hydrogen som trengs per kilometer kjørt
+        Total_cost = Cost_per_kg * user_input_distance / 13.166 # kg hydrogen som trengs per kilometer kjørt
         return Total_cost
     elif (Check_engine_variable == "seveno"):
-        Total_cost = Cost_per_kg * User_input_distance / 12.5  # kg hydrogen som trengs per kilometer kjørt
+        Total_cost = Cost_per_kg * user_input_distance / 12.5  # kg hydrogen som trengs per kilometer kjørt
         return Total_cost
 
     elif (Check_engine_variable == "Liquid"):
-        Total_cost = Cost_per_kg * User_input_distance / 14.65  # kg hydrogen som trengs per kilometer kjørt
+        Total_cost = Cost_per_kg * user_input_distance / 14.65  # kg hydrogen som trengs per kilometer kjørt
         return Total_cost
 
 

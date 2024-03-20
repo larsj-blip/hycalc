@@ -9,7 +9,12 @@ export const useFormStore = defineStore('form_store', ()=> {
       payload_weight.value = updated_payload
       console.log(payload_weight.value)
     }
-  return {distance_traveled, payload_weight, update_form_store}
+    function get_store_as_json(){
+      return {'distance_traveled': distance_traveled.value,
+          'payload_weight' : payload_weight.value
+      }
+    }
+  return {distance_traveled, payload_weight, update_form_store, get_store_as_json}
 })
   //   TODO: set data in store from form
       // what we have:  volume, hydrogen prices,
