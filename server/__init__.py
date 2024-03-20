@@ -1,7 +1,6 @@
 import os
 
-import requests
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, send_from_directory
 
 from server import calculations
 from server.calculations.fueling import refuel_data
@@ -41,7 +40,12 @@ def create_app(test_config=None):
         print(refuel_data_object)
         return jsonify(refuel_data_object)
 
+    @app.route('/favicon.ico')
+    def favicon():
+        return send_from_directory(os.path.join(app.root_path, 'static'), 'favicon.ico')
+
     @app.route('/help')
     def help():
         return f'{os.getcwd()}'
+
     return app

@@ -1,13 +1,12 @@
 <script setup>
 import {onMounted, ref} from "vue";
 
-axios.defaults.baseURL = process.env.BASE_URL;
-
-
-
 import axios from "axios";
+
+
 import {useFormStore} from "@/stores/form_store.js";
-import process from "@vueform/vueform/src/config/index.js";
+
+
 
 const store = useFormStore()
 const transport_types = ["Battery", "CH2_350bar", "CH2_700bar", "Diesel", "LH2"]
@@ -22,6 +21,9 @@ const calculations = ref({
 })
 
 onMounted(()=> {
+  console.log(import.meta.env.VITE_DOMAIN)
+axios.defaults.baseURL = import.meta.env.VITE_DOMAIN
+
   axios.post('/api/calculate/truck',
     store.get_store_as_json(), {
       headers: {
@@ -30,12 +32,11 @@ onMounted(()=> {
     }
 ).then(function (response) {
   calculations.data = response.data;
-    console.log(response.data)
+    console.log("yo yo this is the response: ${response.data}" )
 })
 
 })
 
-console.log(calculations.data)
 
 
 
