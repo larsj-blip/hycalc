@@ -1,12 +1,13 @@
 <script setup>
 import {onMounted} from "vue";
 
-axios.defaults.baseURL = 'http://localhost:5000';
+axios.defaults.baseURL = process.env.BASE_URL;
 
 
 
 import axios from "axios";
 import {useFormStore} from "@/stores/form_store.js";
+import process from "@vueform/vueform/src/config/index.js";
 
 const store = useFormStore()
 const transport_types = ["Battery", "CH2_350bar", "CH2_700bar", "Diesel", "LH2"]
