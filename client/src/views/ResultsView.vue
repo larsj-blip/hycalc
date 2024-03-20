@@ -1,5 +1,5 @@
 <script setup>
-import {onMounted} from "vue";
+import {onMounted, ref} from "vue";
 
 axios.defaults.baseURL = process.env.BASE_URL;
 
@@ -11,7 +11,7 @@ import process from "@vueform/vueform/src/config/index.js";
 
 const store = useFormStore()
 const transport_types = ["Battery", "CH2_350bar", "CH2_700bar", "Diesel", "LH2"]
-const calculations = {
+const calculations = ref({
   headers: ["minutes_spent_refueling", "number_of_refuels", "percent_left_in_tank"],
   // data:
   //   {
@@ -19,7 +19,7 @@ const calculations = {
   //     "number_of_refuels": {'Battery': 0, 'CH2_350bar': 0, 'CH2_700bar': 0, 'Diesel': 0, 'LH2': 0},
   //     "percent_left_in_tank": {'Battery': 74, 'CH2_350bar': 87, 'CH2_700bar': 87, 'Diesel': 95, 'LH2': 89},
   //   }
-}
+})
 
 onMounted(()=> {
   axios.post('/api/calculate/truck',
