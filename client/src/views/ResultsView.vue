@@ -32,7 +32,7 @@ axios.defaults.baseURL = import.meta.env.VITE_DOMAIN
     }
 ).then(function (response) {
   calculations.data = response.data;
-    console.log("yo yo this is the response: ${response.data}" )
+    console.log(response.data)
 })
 
 })
