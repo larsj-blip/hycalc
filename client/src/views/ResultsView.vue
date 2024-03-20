@@ -29,7 +29,8 @@ onMounted(()=> {
       }
     }
 ).then(function (response) {
-  calculations.data = response.data
+  calculations.data = response.data;
+    console.log(response.data)
 })
 
 })
