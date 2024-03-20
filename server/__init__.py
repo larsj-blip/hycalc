@@ -38,6 +38,7 @@ def create_app(test_config=None):
         form_data = request.json
         distance_traveled = form_data['distance_traveled']
         refuel_data_object = refuel_data(distance_traveled)
+        print(refuel_data_object)
         return jsonify(refuel_data_object)
 
     @app.route('/help')
