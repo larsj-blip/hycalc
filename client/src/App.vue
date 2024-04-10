@@ -13,7 +13,7 @@ import index from './components/InputForm.vue'
       <nav>
         <button type="button" class="btn btn-link"><RouterLink to="/">Home</RouterLink></button>
         <button type="button" class="btn btn-link"><RouterLink to="/results">results</RouterLink></button>
-        <button type="button"><RouterLink to="/sources">sources</RouterLink></button>
+        <button type="button" class="btn btn-link"><RouterLink to="/sources">sources</RouterLink></button>
       </nav>
     </div>
   </header>
