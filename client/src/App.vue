@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import index from './components/input_form.vue'
+import index from './components/InputForm.vue'
 </script>
 
 <template>
