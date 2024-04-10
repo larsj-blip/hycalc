@@ -1,20 +1,17 @@
 <script setup>
-import {onMounted, shallowRef} from "vue";
-import axios from "axios";
-import {useFormStore} from "@/stores/form_store.js";
 
-
+</script>
+<template>
 <template>
     <div class="sources1">
       <h2>Sources for calculating hydrogen price</h2>
       <ul>
         <li>Werner Zittel; Reinhold Wurster (1996-07-08). "Chapter 3: Production of Hydrogen. Part 4: Production from electricity by means of electrolysis".</li>
         <li>Bjørnar Kruse; Sondre Grinna; Cato Buch (2002-02-13). "Hydrogen – Status and Possibilities". The Bellona Foundation</li>
-        <li> realto.io: Connect to spot market price electricity across Europe <li>
+        <li> realto.io: Connect to spot market price electricity across Europe </li>
 
       </ul>
     </div>
-  </div>
 </template>
 
 <template>
@@ -26,7 +23,6 @@ import {useFormStore} from "@/stores/form_store.js";
         <!-- Add more sources as needed -->
       </ul>
     </div>
-   </div>
 </template>
 
 <template>
@@ -37,11 +33,11 @@ import {useFormStore} from "@/stores/form_store.js";
         <li></li>
       </ul>
     </div>
-  </div>
 </template>
 
+</template>
 
-<style>
+<style scoped>
 .content {
   /* Your styling for the content section */
 }
