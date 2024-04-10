@@ -200,30 +200,32 @@ class RealWorldData:
 class TruckData:
     id: str
     type_powertrain: str
-    source: str
+    source_url: str
+    source_type: str
     data: list[RealWorldData]
     
     @staticmethod
     def from_json(input_json):
 
-        id = input_json["id"]
+        irl_id = input_json["id"]
         type_powertrain = input_json["type_powertrain"]
-        source = input_json["source"]
+        source_url = input_json["source_url"]
+        source_type = input_json["source_type"]
         irl_data = []
         
         for el in input_json["data"]:
             json_rwd = input_json["data"][el]            
             irl_data.append(RealWorldData.get_real_worl_data(json_rwd))
         
-        data_obj = TruckData(id, type_powertrain, source, irl_data)
+        data_obj = TruckData(id, type_powertrain, source_url, source_type, irl_data)
         
         return data_obj
 
-
 if __name__ == '__main__':
 
-    f = open("server/data/truck_data.json")
-
-    data = json.load(f)
-    truck_data = TruckData.from_json(data)
-    print(truck_data)
+    f = open("H2Go/server/data/truck_data.json")
+    json_objects = json.load(f)
+    truck_data_objects = []
+    for json_object in json_objects:
+        truck_data_objects.append(TruckData.from_json(json_object))
+    print(truck_data_objects)
