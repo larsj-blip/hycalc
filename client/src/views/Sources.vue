@@ -2,7 +2,6 @@
 
 </script>
 <template>
-<template>
     <div class="sources1">
       <h2>Sources for calculating hydrogen price</h2>
       <ul>
@@ -12,9 +11,8 @@
 
       </ul>
     </div>
-</template>
 
-<template>
+
     <div class="sources2">
       <h2>Sources for  calculating number of refuels</h2>
       <ul>
@@ -23,9 +21,8 @@
         <!-- Add more sources as needed -->
       </ul>
     </div>
-</template>
 
-<template>
+
     <div class="sources3">
       <h2>Sources for calculating minutes spent refueling</h2>
       <ul>
@@ -33,7 +30,6 @@
         <li></li>
       </ul>
     </div>
-</template>
 
 </template>
 
