@@ -1,4 +1,4 @@
-import {mount} from '@vue/test-utils'
+import {flushPromises, mount} from '@vue/test-utils'
 import {expect, test, vi, beforeAll, afterAll, afterEach} from 'vitest';
 import {createTestingPinia} from '@pinia/testing'
 import ResultsView from "@/views/ResultsView.vue";
@@ -24,7 +24,7 @@ test('table data is populated reactively', async () => {
 
   let domWrapper = wrapper.find('button');
   await domWrapper.trigger("click", );
+  await flushPromises()
     let amount_of_components = wrapper.findAllComponents('[data-test="result_row"]').length;
-    console.log(wrapper.html())
     expect(wrapper.vm.refueling_data).toEqual(data)
 })

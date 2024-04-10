@@ -10,28 +10,7 @@ const fuel_type_headers = {
   Battery: "Battery",
   Diesel: "Diesel"
 }
-const refueling_data = shallowRef([
-  {
-    type: "CH2_350bar",
-    number_of_refuels: 1,
-    percent_left_in_tank: 77,
-    minutes_spent_refueling: 18.0
-  },
-  {
-    type: "CH2_700bar",
-    number_of_refuels: 1,
-    percent_left_in_tank: 70,
-    minutes_spent_refueling: 19.0
-  },
-  { type: "LH2", number_of_refuels: 1, percent_left_in_tank: 95, minutes_spent_refueling: 12.5 },
-  {
-    type: "Battery",
-    number_of_refuels: 2,
-    percent_left_in_tank: 41,
-    minutes_spent_refueling: 50.0
-  },
-  { type: "Diesel", number_of_refuels: 0, percent_left_in_tank: 53, minutes_spent_refueling: 0.0 },
-])
+const refueling_data = shallowRef(null)
 const store = useFormStore()
 axios.defaults.baseURL = import.meta.env.VITE_DOMAIN
 
@@ -53,10 +32,10 @@ function fetch_data_from_api() {
 
 }
 
-// onMounted(() => {
-//   fetch_data_from_api();
-//
-// })
+onMounted(() => {
+  fetch_data_from_api();
+
+})
 
 
 </script>
