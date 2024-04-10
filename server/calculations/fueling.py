@@ -1,4 +1,8 @@
 import numpy as np
+import json
+import os
+from dataclasses import dataclass
+import typing
 
 """
     DATA
@@ -34,7 +38,7 @@ rt_350bar_avg = np.average(rt_350bar_list)
 m_source1 = 26 
 m_source2 = 33
 m_source3 = 50
-m_source4 = 55
+m_source4 = 55  
 mH2_350bar_list = [m_source1, m_source2, m_source3, m_source4]
 mH2_350bar_avg = np.average(mH2_350bar_list)
 
@@ -121,7 +125,7 @@ r_dies_avg = np.average(r_dies_list)
 rt_dies_source1 = 10
 rt_dies_list = [rt_dies_source1]
 rt_dies_avg = np.average(rt_dies_list)
-    
+
 #fuel consumption [km/L] NOT NECESSARY RN
 fcon_dsl_source1 = 2.976
 
@@ -132,17 +136,18 @@ rt_avg_list = [rt_350bar_avg, rt_700bar_avg, rt_L_avg, rt_bat_avg, rt_dies_avg]
 data_to_send = ["number_of_refuels", "percent_left_in_tank", "minutes_spent_refueling"]
 types_of_trucks = ["CH2_350bar", "CH2_700bar", "LH2", "Battery", "Diesel"]
 
-
 def calc_refueling(user_range):
     """
     Description:
-        takes the input "user_range" to calculate the number of refuels
+        takes the input "user_range" to calculate 
+        the number of refuels, time spent refueling 
+        and procent left in tank
             
     Args:
         user_range: the input from the user with their desired trucking range (int, float)
     
     Returns:
-        n_refuels (list)
+        refueling (dict)
     """
 
     n_refuels_350 = user_range / r_350bar_avg
@@ -173,3 +178,52 @@ def calc_refueling(user_range):
         all_data_dict[data_to_send[i]] = idict
         
     return all_data_dict
+
+@dataclass
+class RealWorldData:
+    object_type: str
+    id: str
+    value: int
+    unit: str
+    
+    @staticmethod
+    def get_real_worl_data(input_json):
+                    
+        object_type = input_json["object_type"]
+        irl_id = input_json["id"]
+        value = input_json["value"]
+        unit = input_json["unit"]
+
+        return RealWorldData(object_type, irl_id, value, unit)
+
+@dataclass
+class TruckData:
+    id: str
+    type_powertrain: str
+    source: str
+    data: list[RealWorldData]
+    
+    @staticmethod
+    def from_json(input_json):
+
+        id = input_json["id"]
+        type_powertrain = input_json["type_powertrain"]
+        source = input_json["source"]
+        irl_data = []
+        
+        for el in input_json["data"]:
+            json_rwd = input_json["data"][el]            
+            irl_data.append(RealWorldData.get_real_worl_data(json_rwd))
+        
+        data_obj = TruckData(id, type_powertrain, source, irl_data)
+        
+        return data_obj
+
+
+if __name__ == '__main__':
+
+    f = open("server/data/truck_data.json")
+
+    data = json.load(f)
+    truck_data = TruckData.from_json(data)
+    print(truck_data)

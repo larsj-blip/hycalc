@@ -1,0 +1,54 @@
+{
+    "CH2_350_ASKO_Scania":{
+        "id": "CH2_350_ASKO_Scania",
+        "type_powertrain": "CH2_350",
+        "source_url": "https://www.scania.com/group/en/home/newsroom/news/2020/norwegian-wholesaler-asko-puts-hydrogen-powered-fuel-cell-electric-scania-trucks-on-the-road.html",
+        "source_type": "oem_existing",
+        "data": {
+            "range": {
+                "object_type": "real_world_data",
+                "id": "range",
+                "value": 450,
+                "unit": "km"
+            },
+            "refuel_time": {
+                "object_type": "real_world_data",
+                "id": "refuel_time",
+                "value": 20,
+                "unit": "min"
+            },
+            "fuel_mass": {
+                "object_type": "real_world_data",
+                "id": "fuel_mass",
+                "value": 33,
+                "unit": "kg"
+            }
+        }
+    },
+    "CH2_350_Zepp":{
+        "id": "CH2_350_Zepp",
+        "type_powertrain": "CH2_350",
+        "source_url": "https://zepp.solutions/en/europa/#:~:text=Europa%20trucks%20with%20a%20700,needs%20of%20any%20transportation%20company.",
+        "source_type": "oem_proposed",
+        "data": {
+            "range": {
+                "object_type": "real_world_data",
+                "id": "range",
+                "value": 700,
+                "unit": "km"
+            },
+            "refuel_time": {
+                "object_type": "real_world_data",
+                "id": "refuel_time",
+                "value": 20,
+                "unit": "min"
+            },
+            "fuel_mass": {
+                "object_type": "real_world_data",
+                "id": "fuel_mass",
+                "value": 50,
+                "unit": "kg"
+            }
+        }
+    }
+}
