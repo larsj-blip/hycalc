@@ -74,3 +74,56 @@ onMounted(() => {
   <button @click="fetch_data_from_api">reload</button>
 </template>
 
+<style scoped>
+
+body {
+  background-color: #f0f8ff; /* Light blue color */
+}
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  height: 100vh; /* Set height to viewport height to center vertically */
+}
+table {
+  width: 80%;
+  border-collapse: collapse; /* Collapse table borders */
+}
+
+th {
+  background-color: #f2f2f2; /* Light gray background */
+  color: #333; /* Dark gray text color */
+  padding: 8px; /* Add padding */
+  text-align: left; /* Align text to the left */
+  border-bottom: 1px solid #ddd; /* Add bottom border */
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9; /* Alternate background color */
+}
+
+td {
+  padding: 8px; /* Add padding */
+  border-bottom: 1px solid #ddd; /* Add bottom border */
+}
+
+tbody tr:hover {
+  background-color: #e9e9e9; /* Light gray background on hover */
+}
+
+button {
+  background-color: #007bff; /* Blue background */
+  color: #fff; /* White text color */
+  border: none; /* Remove border */
+  padding: 10px 20px; /* Add padding */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  border-radius: 5px; /* Add border radius */
+  margin-top: 10px; /* Add top margin */
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue background on hover */
+}
+
+</style>
