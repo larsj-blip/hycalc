@@ -58,17 +58,17 @@ onMounted(() => {
       </th>
     </tr>
     </thead>
-    <tbody>
-    <tr v-for="fuel_data in refueling_data" :key="fuel_data.type">
-      <td></td>
-      <template v-for='(datapoint) in fuel_data'>
-        <td>
-          {{ datapoint }}
+    <template v-for="data_object in refueling_data" :key="data_object.type">
+      <tbody>
+      <tr data-test="result_row">
+        <td>{{ data_object.type }}</td>
+        <td v-for='(_, datapoint_name) in travel_data_headers' >
+          {{ data_object[datapoint_name] }}
         </td>
+      </tr>
+      </tbody>
+    </template>
 
-      </template>
-    </tr>
-    </tbody>
   </table>
 
   <button @click="fetch_data_from_api">reload</button>
