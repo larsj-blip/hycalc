@@ -27,14 +27,12 @@ function fetch_data_from_api() {
       }
   ).then(async function (response) {
     set_table_data(response.data);
-
   })
 
 }
 
 onMounted(() => {
   fetch_data_from_api();
-
 })
 
 
@@ -48,9 +46,9 @@ onMounted(() => {
   <table v-if="refueling_data" class="table table-striped table-bordered">
     <thead>
     <tr>
-      <th scope="col">type</th>
+      <th scope="col">fuel type</th>
       <th scope="col" v-for="fuel_type in fuel_type_headers">
-        data-test="result_row">{{ fuel_type }}
+        {{ fuel_type }}
       </th>
     </tr>
     </thead>
@@ -60,6 +58,7 @@ onMounted(() => {
         <td v-if="key !== 'type'">
           {{ datapoint }}
         </td>
+        <td v-else></td>
       </template>
     </tr>
     </tbody>
