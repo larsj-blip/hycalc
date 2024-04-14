@@ -45,7 +45,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="about">
+  <div class="jumbotron">
     <h1>Results</h1>
   </div>
 
@@ -75,13 +75,11 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.about {
+.jumbotron {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  background-color: #f0f8ff; /* Light blue background */
 }
 
 table {

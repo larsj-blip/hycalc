@@ -1,5 +1,5 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import {RouterLink, RouterView} from 'vue-router'
 import index from './components/InputForm.vue'
 </script>
 
@@ -22,6 +22,11 @@ import index from './components/InputForm.vue'
 </template>
 
 <style scoped>
+.container-lg {
+  background-color: #f0f8ff; /* Light blue background */
+
+}
+
 header {
   line-height: 1.5;
   max-height: 100vh;

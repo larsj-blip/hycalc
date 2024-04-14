@@ -22,7 +22,7 @@ function update_values_in_store() {
   <form>
     <div class="form-group">
       <label for="distance_traveled">Distance traveled</label>
-      <input class="form-control" type="number" id="distance_traveled" v-model="distance_traveled" placeholder="100"/>
+      <input class="form-control" type="number" id="distance_traveled" v-model="distance_traveled" placeholder="100" />
     </div>
     <div class="form-group">
       <label for="payload_weight">Payload weight</label>
@@ -35,6 +35,14 @@ function update_values_in_store() {
 </template>
 
 <style scoped>
+
+form {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
 
 
 </style>
