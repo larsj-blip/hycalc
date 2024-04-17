@@ -84,29 +84,8 @@ onMounted(() => {
 }
 
 table {
-  width: 80%;
-  border-collapse: collapse;
-}
-
-th {
-  background-color: #f2f2f2;
-  color: #333;
-  padding: 8px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-}
-
-tbody tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-td {
-  padding: 8px;
-  border-bottom: 1px solid #ddd;
-}
-
-tbody tr:hover {
-  background-color: #e9e9e9;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 button {
