@@ -45,7 +45,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="about">
+  <div class="heading">
     <h1>Results</h1>
   </div>
 
@@ -61,7 +61,7 @@ onMounted(() => {
     <template v-for="data_object in refueling_data" :key="data_object.type">
       <tbody>
       <tr data-test="result_row">
-        <td>{{ data_object.type }}</td>
+        <td>{{ fuel_type_headers[data_object.type] }}</td>
         <td v-for='(_, datapoint_name) in travel_data_headers' >
           {{ data_object[datapoint_name] }}
         </td>
@@ -75,13 +75,12 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.about {
+.heading {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  background-color: #f0f8ff; /* Light blue background */
+  height: 10vh;
 }
 
 table {
@@ -111,13 +110,16 @@ tbody tr:hover {
 }
 
 button {
+  display: block;
   background-color: #007bff;
   color: #fff;
   border: none;
-  padding: 10px 20px;
+  padding: 10px 10px;
   cursor: pointer;
   border-radius: 5px;
-  margin-top: 10px;
+  width: 10%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 button:hover {
