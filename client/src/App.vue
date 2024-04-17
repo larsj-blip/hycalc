@@ -1,24 +1,45 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import index from './components/InputForm.vue'
+import {RouterLink, RouterView, useRouter} from 'vue-router'
+import {ref} from "vue";
+const router = useRouter()
+const is_visible = ref(false);
+
+function showResults() {
+  router.push('/results')
+}
+
+function setResultLinkVisibility() {
+  is_visible.value = true;
+}
+
+function navigateToResults() {
+  setResultLinkVisibility();
+  showResults();
+}
+
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125"/>
 
     <div class="wrapper">
-      <index />
 
       <nav>
-        <button type="button" class="btn btn-link"><RouterLink to="/">Home</RouterLink></button>
-        <button type="button" class="btn btn-link"><RouterLink to="/results">results</RouterLink></button>
-        <button type="button" class="btn btn-link"><RouterLink to="/sources">sources</RouterLink></button>
+        <button type="button" class="btn btn-link">
+          <RouterLink to="/">Home</RouterLink>
+        </button>
+        <button type="button" class="btn btn-link" v-if="is_visible">
+          <RouterLink to="/results">results</RouterLink>
+        </button>
+        <button type="button" class="btn btn-link">
+          <RouterLink to="/sources">sources</RouterLink>
+        </button>
       </nav>
     </div>
   </header>
 
-  <RouterView />
+  <RouterView @showResults="navigateToResults"/>
 </template>
 
 <style scoped>
@@ -38,7 +59,6 @@ nav {
   text-align: center;
   margin-top: 2rem;
 }
-
 
 
 nav a {
