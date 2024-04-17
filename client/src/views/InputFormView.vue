@@ -35,6 +35,22 @@ function update_values_in_store() {
 </template>
 
 <style scoped>
+button {
+  display: block;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 10%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
 
 
 </style>
