@@ -27,7 +27,8 @@ def test_truck_api_endpoint(client):
         "payload_weight": 100
     }, )
 
-    json_response = response.json
+    json_response = response.json[0]
     assert_that(json_response).contains("minutes_spent_refueling")
     assert_that(json_response).contains("number_of_refuels")
-    assert_that(json_response).contains("percent_left_in_the_tank")
+    assert_that(json_response).contains("percent_left_in_tank")
+    assert_that(json_response).contains("price")
