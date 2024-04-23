@@ -65,16 +65,29 @@ Total_cost_gas = User_input_distance* 0.10 *21.72
 
 Total_cost_electric = User_input_distance*Price_electricity*0.20
 
-Cost_dictionary = {
-    "treefifty": Total_cost_treefifty,
-    "sevenhundred": Total_cost_seveno,
-    "liquid":  Total_cost_liquid,
-     "Gas" : Total_cost_gas,
-    "Electric": Total_cost_electric
-
-}
 
 
+def dictionary_fuction(User_input_distance):
+    Total_cost_treefifty = User_input_distance * Cost_per_kg_treehundred / 13.166  # kg hydrogen som trengs per kilometer kjørt
+
+    Total_cost_seveno = User_input_distance * Cost_per_kg_seveno / 12.5  # kg hydrogen som trengs per kilometer kjørt
+
+    Total_cost_liquid = User_input_distance * Cost_per_kg_liquid / 14.65  # kg hydrogen som trengs per kilometer kjørt
+
+    Total_cost_gas = User_input_distance * 0.10 * 21.72
+
+    Total_cost_electric = User_input_distance * Price_electricity * 0.20
+
+    Cost_dictionary = {
+        "treefifty": Total_cost_treefifty,
+        "sevenhundred": Total_cost_seveno,
+        "liquid": Total_cost_liquid,
+        "Gas": Total_cost_gas,
+        "Electric": Total_cost_electric
+
+    }
+
+    return Cost_dictionary
 if __name__ == "__main__":
 
 
