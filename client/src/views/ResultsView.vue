@@ -15,6 +15,7 @@ const travel_data_headers = {
   minutes_spent_refueling: 'Minutes spent refueling',
   number_of_refuels: 'Number of refuels during the trip',
   percent_left_in_tank: 'Percent of fuel left in the tank after the trip',
+  price: 'Fuel costs'
 }
 const refueling_data = shallowRef(null)
 const store = useFormStore()
