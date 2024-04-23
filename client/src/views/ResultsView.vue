@@ -84,6 +84,7 @@ onMounted(() => {
 }
 
 table {
+  margin: auto auto;
   width: 80%;
   border-collapse: collapse;
 }

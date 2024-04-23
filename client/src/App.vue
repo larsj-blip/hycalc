@@ -1,6 +1,7 @@
 <script setup>
 import {RouterLink, RouterView, useRouter} from 'vue-router'
 import {ref} from "vue";
+
 const router = useRouter()
 const is_visible = ref(false);
 
@@ -25,16 +26,18 @@ function navigateToResults() {
 
     <div class="wrapper">
 
-      <nav>
-        <button type="button" class="btn btn-link">
-          <RouterLink to="/">Home</RouterLink>
-        </button>
-        <button type="button" class="btn btn-link" v-if="is_visible">
-          <RouterLink to="/results">results</RouterLink>
-        </button>
-        <button type="button" class="btn btn-link">
-          <RouterLink to="/sources">sources</RouterLink>
-        </button>
+      <nav class="navbar">
+        <ul class="nav navbar-right nav-pills">
+          <li class="nav-item">
+            <RouterLink to="/" class="nav-link">Home</RouterLink>
+          </li>
+          <li class="nav-item" v-if="is_visible">
+            <RouterLink to="/results" class="nav-link">results</RouterLink>
+          </li>
+          <li class="nav-item">
+            <RouterLink to="/sources" class="nav-link">sources</RouterLink>
+          </li>
+        </ul>
       </nav>
     </div>
   </header>
@@ -47,7 +50,9 @@ header {
   line-height: 1.5;
   max-height: 100vh;
 }
-
+.nav-link{
+  font-size: 3em;
+}
 .logo {
   display: block;
   margin: 0 auto 2rem;
@@ -89,7 +94,7 @@ nav a:first-of-type {
   nav {
     font-size: 1rem;
     margin: auto auto 2rem;
-    padding: 1rem 0;
+    padding: 1rem 0 1rem;
   }
 }
 
