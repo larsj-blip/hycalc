@@ -73,28 +73,23 @@ nav a:first-of-type {
 
 @media (min-width: 1024px) {
   header {
-    display: flex;
     place-items: center;
 
   }
 
   .logo {
-    margin: 0 2rem 0 0;
+    margin: auto auto 2rem;
   }
 
   header .wrapper {
     display: flex;
     place-items: flex-start;
-    flex-wrap: wrap;
   }
 
   nav {
-    text-align: left;
-    margin-left: -1rem;
     font-size: 1rem;
-
+    margin: auto auto 2rem;
     padding: 1rem 0;
-    margin-top: 1rem;
   }
 }
 
