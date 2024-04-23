@@ -16,6 +16,7 @@ Price_electricity = data['price'][20]
 Electricity_needed = 0.05 #MWh needed to produce 1 kg of hydrogen
 
 
+
 def cost_of_producing_1_kg_hydrogen():
     return (Price_electricity * Electricity_needed)
 
@@ -24,37 +25,56 @@ def cost_of_producing_1_kg_hydrogen():
 #Compressing hydrogen from 20 bar to 350 bar requires 1.05 kWh/kg H2
 
 #Liquid requires 10-13 KWh/kg LH2
-Check_engine_variable = ""
-Cost_per_kg = 0
+
+
 # User_input_distance = 0 #Kilometer input i integer
 
-def cost_of_your_engine_per_kg():
-    if (Check_engine_variable == "treefifty"):
-        Cost_per_kg = cost_of_producing_1_kg_hydrogen()+1.05*41*Price_electricity
-        return Cost_per_kg
-    elif (Check_engine_variable == "seveno"):
-        Cost_per_kg = cost_of_producing_1_kg_hydrogen()+1.05*61.66*Price_electricity
-        return Cost_per_kg
-
-    elif (Check_engine_variable == "Liquid"):
-        Cost_per_kg = cost_of_producing_1_kg_hydrogen()+10*56*Price_electricity
-        return Cost_per_kg
 
 
-def total_cost_of_driving_your_vehicle(user_input_distance):
+        Cost_per_kg_treehundred = cost_of_producing_1_kg_hydrogen()+1.05*41*Price_electricity
+
+
+        Cost_per_kg_seveno = cost_of_producing_1_kg_hydrogen()+1.05*61.66*Price_electricity
+
+
+
+        Cost_per_kg_liquid = cost_of_producing_1_kg_hydrogen()+10*56*Price_electricity
+
+
+
+
     #350: 13.166 km/kg H2
     #700: 12.5 km/kg
     #Liquid: 14.65 km/kg
-    if (Check_engine_variable == "treefifty"):
-        Total_cost = Cost_per_kg * user_input_distance / 13.166 # kg hydrogen som trengs per kilometer kjørt
-        return Total_cost
-    elif (Check_engine_variable == "seveno"):
-        Total_cost = Cost_per_kg * user_input_distance / 12.5  # kg hydrogen som trengs per kilometer kjørt
-        return Total_cost
 
-    elif (Check_engine_variable == "Liquid"):
-        Total_cost = Cost_per_kg * user_input_distance / 14.65  # kg hydrogen som trengs per kilometer kjørt
-        return Total_cost
+
+#INPUT USER DISTANCE
+
+    #Calculating 350
+
+        Total_cost_treefifty = User_input_distance* Cost_per_kg_treehundred  / 13.166 # kg hydrogen som trengs per kilometer kjørt
+
+   #Calculating 700
+        Total_cost_seveno = User_input_distance* Cost_per_kg_seveno / 12.5  # kg hydrogen som trengs per kilometer kjørt
+
+#Calculating liquid
+
+        Total_cost_liquid = User_input_distance*Cost_per_kg_liquid / 14.65 # kg hydrogen som trengs per kilometer kjørt
+
+#Calculating gas
+
+Total_cost_gas = User_input_distance* 0.10 *21.72
+
+Total_cost_electric = User_input_distance*Price_electricity*0.20
+
+Cost_dictionary = {
+    "treefifty": Total_cost_treefifty,
+    "sevenhundred": Total_cost_seveno,
+    "liquid":  Total_cost_liquid,
+     "Gas" : Total_cost_gas
+    "Electric": Total_cost_electric
+
+}
 
 
 if __name__ == "__main__":
