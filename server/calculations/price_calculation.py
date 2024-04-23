@@ -60,13 +60,15 @@ def dictionary_function(user_input_distance):
                                                          electricity_needed) + 1.05 * 61.66 * price_electricity
 
     cost_per_kg_liquid = cost_of_producing_1_kg_hydrogen(price_electricity,
-                                                         electricity_needed) + 10 * 56 * price_electricity
+                                                         electricity_needed) + 3.3 * 56 * price_electricity
 
-    total_cost_treefifty = user_input_distance * cost_per_kg_treehundred / 13.166  # kg hydrogen som trengs per kilometer kjørt
+    total_cost_treefifty = (user_input_distance * cost_per_kg_treehundred / 13.166 )/1000 # kg hydrogen som trengs per kilometer kjørt
 
-    total_cost_seveno = user_input_distance * cost_per_kg_seveno / 12.5  # kg hydrogen som trengs per kilometer kjørt
-    total_cost_liquid = user_input_distance * cost_per_kg_liquid / 14.65  # kg hydrogen som trengs per kilometer kjørt
-    total_cost_gas = user_input_distance * 0.10 * 21.72
+    total_cost_seveno = (
+                                    user_input_distance * cost_per_kg_seveno / 12.5) / 1000  # kg hydrogen som trengs per kilometer kjørt
+    total_cost_liquid = (
+                                    user_input_distance * cost_per_kg_liquid / 14.65) / 1000  # kg hydrogen som trengs per kilometer kjørt
+    total_cost_gas = user_input_distance * 0.10 * 2.172
     total_cost_electric = user_input_distance * price_electricity * 0.20
 
     cost_dictionary = {
@@ -78,3 +80,4 @@ def dictionary_function(user_input_distance):
     }
 
     return cost_dictionary
+# km * (eur / kg) / (kg / km)
