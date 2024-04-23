@@ -5,10 +5,6 @@ from dataclasses import dataclass
 import typing
 
 """
-    DATA
-    _sourceX indicates the source in order per type of truck in the "data_data_data" google sheet
-"""
-
 #densities of hydrogen [kg/m3] NOT NECESSARY RN
 density_CH2_350bar = 24.0 
 density_CH2_700bar = 40.2
@@ -131,6 +127,7 @@ fcon_dsl_source1 = 2.976
 
 #average refueling/charging times list
 rt_avg_list = [rt_350bar_avg, rt_700bar_avg, rt_L_avg, rt_bat_avg, rt_dies_avg]
+"""
 
 #names
 data_to_send = ["number_of_refuels", "percent_left_in_tank", "minutes_spent_refueling"]
@@ -139,9 +136,7 @@ types_of_trucks = ["CH2_350bar", "CH2_700bar", "LH2", "Battery", "Diesel"]
 def calc_refueling(user_range):
     """
     Description:
-        takes the input "user_range" to calculate 
-        the number of refuels, time spent refueling 
-        and procent left in tank
+        takes the input "user_range" to calculate the number of refuels, time spent refueling and procent left in tank
             
     Args:
         user_range: the input from the user with their desired trucking range (int, float)
@@ -221,11 +216,22 @@ class TruckData:
         
         return data_obj
 
+@dataclass
+class DataWeights:
+    trial_project: list
+    limited_production: list
+    commercially_available: list
+    type: str
+    weight: float
+    
+    @staticmethod
+    def 
+    
 if __name__ == '__main__':
 
-    f = open("H2Go/server/data/truck_data.json")
+    f = open("../H2Go/server/data/truck_data.json")
     json_objects = json.load(f)
     truck_data_objects = []
     for json_object in json_objects:
         truck_data_objects.append(TruckData.from_json(json_object))
-    print(truck_data_objects)
+    print(truck_data_objects[0])

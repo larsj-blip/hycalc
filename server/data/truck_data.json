@@ -3,7 +3,7 @@
     "id": "CH2_350_ASKO_Scania",
     "type_powertrain": "CH2_350",
     "source_url": "https://www.scania.com/group/en/home/newsroom/news/2020/norwegian-wholesaler-asko-puts-hydrogen-powered-fuel-cell-electric-scania-trucks-on-the-road.html",
-    "source_type": "oem_existing",
+    "source_type": "trial_project",
     "data": {
         "range": {
             "object_type": "real_world_data",
@@ -29,7 +29,7 @@
     "id": "CH2_350_Zepp",
     "type_powertrain": "CH2_350",
     "source_url": "https://zepp.solutions/en/europa/#:~:text=Europa%20trucks%20with%20a%20700,needs%20of%20any%20transportation%20company.",
-    "source_type": "oem_proposed",
+    "source_type": "to_be_determined",
     "data": {
         "range": {
             "object_type": "real_world_data",
@@ -55,7 +55,7 @@
     "id": "CH2_700_Nikola",
     "type_powertrain": "CH2_700",
     "source_url": "https://www.nikolamotor.com/tre-fcev/",
-    "source_type": "oem_existing",
+    "source_type": "commercially_available",
     "data": {
         "range": {
             "object_type": "real_world_data",
@@ -81,7 +81,7 @@
     "id": "CH2_700_Zepp",
     "type_powertrain": "CH2_700",
     "source_url": "https://zepp.solutions/en/europa/#:~:text=Europa%20trucks%20with%20a%20700,needs%20of%20any%20transportation%20company.",
-    "source_type": "oem_proposed",
+    "source_type": "to_be_determined",
     "data": {
         "range": {
             "object_type": "real_world_data",
@@ -107,7 +107,7 @@
     "id": "CH2_700_Iveco",
     "type_powertrain": "CH2_700",
     "source_url": "https://www.iveco.com/global/Press/PressReleases/2023/IVECO-to-produce-and-market-its-Heavy-Duty-Battery-Electric-Vehicle-and-Heavy-Duty-Fuel-Cell-Electric-Vehicle",
-    "source_type": "oem_proposed",
+    "source_type": "limited_production",
     "data": {
         "range": {
             "object_type": "real_world_data",
@@ -133,7 +133,7 @@
     "id": "CH2_350_Hyzon",
     "type_powertrain": "CH2_350",
     "source_url": "https://www.hyzonfuelcell.com/vehicles/hyhd8-200kw",
-    "source_type": "oem_existing",
+    "source_type": "commercially_available",
     "data": {
         "range": {
             "object_type": "real_world_data",
@@ -159,7 +159,7 @@
     "id": "LH2_Daimler_MercBenz",
     "type_powertrain": "LH2",
     "source_url": "https://www.daimlertruck.com/en/newsroom/pressrelease/fuel-cell-technology-daimler-truck-builds-first-mercedes-benz-genh2-truck-customer-trial-fleet-52552943",
-    "source_type": "oem_proposed",
+    "source_type": "limited_production",
     "data": {
         "range": {
             "object_type": "real_world_data",
@@ -185,7 +185,7 @@
     "id": "CH2_350_Hyundai",
     "type_powertrain": "CH2_350",
     "source_url": "https://ecv.hyundai.com/global/en/products/xcient-fuel-cell-truck-fcev/",
-    "source_type": "oem_existing",
+    "source_type": "commercially_available",
     "data": {
         "range": {
             "object_type": "real_world_data",
@@ -211,7 +211,7 @@
     "id": "CH2_350_Esoro",
     "type_powertrain": "CH2_350",
     "source_url": "https://esoro.ch/wp-content/uploads/2019/12/051011607_WS_Factsheet_zu_Faltblatt_Lastwagen_207x294mm_E_RZ_161026.pdf",
-    "source_type": "oem_existing",
+    "source_type": "commercially_available",
     "data": {
         "range": {
             "object_type": "real_world_data",
@@ -237,7 +237,7 @@
     "id": "CH2_700_Toyota_Beta",
     "type_powertrain": "CH2_700",
     "source_url": "https://fuelcelltrucks.eu/project/toyotas-beta-hydrogen-fuel-cell-electric-truck-for-project-porta-2-0/",
-    "source_type": "oem_existing",
+    "source_type": "trial_project",
     "data": {
         "range": {
             "object_type": "real_world_data",
@@ -263,7 +263,7 @@
     "id": "CH2_700_Kenworth",
     "type_powertrain": "CH2_700",
     "source_url": "https://www.kenworth.com/trucks/t680-fcev/",
-    "source_type": "oem_existing",
+    "source_type": "limited_production",
     "data": {
         "range": {
             "object_type": "real_world_data",
@@ -289,7 +289,7 @@
     "id": "CH2_700_Quantron",
     "type_powertrain": "CH2_700",
     "source_url": "https://www.quantron.net/en/q-truck/q-heavy/qhm-fcev/",
-    "source_type": "oem_existing",
+    "source_type": "to_be_determined",
     "data": {
         "range": {
             "object_type": "real_world_data",
@@ -315,7 +315,7 @@
     "id": "El_Freightliner",
     "type_powertrain": "El",
     "source_url": "https://www.freightliner.com/trucks/ecascadia/",
-    "source_type": "oem_existing",
+    "source_type": "commercially_available",
     "data": {
         "range": {
             "object_type": "real_world_data",
@@ -341,7 +341,7 @@
     "id": "El_Kenworth",
     "type_powertrain": "El",
     "source_url": "https://www.kenworth.com/trucks/t680e/",
-    "source_type": "oem_existing",
+    "source_type": "commercially_available",
     "data": {
         "range": {
             "object_type": "real_world_data",
@@ -367,7 +367,7 @@
     "id": "El_Volvo",
     "type_powertrain": "El",
     "source_url": "https://www.volvotrucks.com/en-en/trucks/electric/volvo-fh-electric.html",
-    "source_type": "oem_existing",
+    "source_type": "commercially_available",
     "data": {
         "range": {
             "object_type": "real_world_data",
@@ -393,7 +393,7 @@
     "id": "El_Tesla",
     "type_powertrain": "El",
     "source_url": "https://www.tesla.com/semi",
-    "source_type": "oem_existing",
+    "source_type": "limited_production",
     "data": {
         "range": {
             "object_type": "real_world_data",
@@ -419,7 +419,7 @@
     "id": "El_Nikola",
     "type_powertrain": "El",
     "source_url": "https://nikolamotor.com/the-nikola-tre-bev-reinventing-short-haul-transportation/",
-    "source_type": "oem_existing",
+    "source_type": "commercially_available",
     "data": {
         "range": {
             "object_type": "real_world_data",
@@ -442,10 +442,10 @@
     }  
 },
 {
-    "id": "El_Peterbilt",
+    "id": "Elimited_productioneterbilt",
     "type_powertrain": "El",
     "source_url": "https://www.peterbilt.com/trucks/electric/579EV",
-    "source_type": "oem_existing",
+    "source_type": "limited_production",
     "data": {
         "range": {
             "object_type": "real_world_data",
@@ -468,36 +468,10 @@
     }  
 },
 {
-    "id": "El_DAF",
-    "type_powertrain": "El",
-    "source_url": "https://www.daf.global/en/trucks/new-generation-daf-xb-electric#:~:text=Ranges%20up%20to%20350%20kilometres&text=For%20the%20lowest%20possible%20environmental,141%20up%20to%20282%20kWh.",
-    "source_type": "oem_existing",
-    "data": {
-        "range": {
-            "object_type": "real_world_data",
-            "id": "range",
-            "value": 350,
-            "unit": "km"
-        },
-        "refuel_time": {
-            "object_type": "real_world_data",
-            "id": "refuel_time",
-            "value": 91.7,
-            "unit": "min"
-        },
-        "fuel_mass": {
-            "object_type": "real_world_data",
-            "id": "fuel_mass",
-            "value": 0,
-            "unit": "kg"
-        }
-    }  
-},
-{
     "id": "El_Iveco",
     "type_powertrain": "El",
     "source_url": "https://www.iveco.com/en-us/press-room/release/Pages/IVECO-to-produce-and-market-its-Heavy-Duty-Battery-Electric-Vehicle-and-Heavy-Duty-Fuel-Cell-Electric-Vehicle.aspx",
-    "source_type": "oem_existing",
+    "source_type": "limited_production",
     "data": {
         "range": {
             "object_type": "real_world_data",
@@ -523,7 +497,7 @@
     "id": "El_MAN",
     "type_powertrain": "El",
     "source_url": "https://www.man.eu/de/en/truck/all-models/the-man-tgx/the-man-etgx/overview.html",
-    "source_type": "oem_existing",
+    "source_type": "commercially_available",
     "data": {
         "range": {
             "object_type": "real_world_data",
@@ -549,7 +523,7 @@
     "id": "El_Renault",
     "type_powertrain": "El",
     "source_url": "https://www.renault-trucks.co.uk/product/renault-trucks-e-tech-t-electric",
-    "source_type": "oem_existing",
+    "source_type": "commercially_available",
     "data": {
         "range": {
             "object_type": "real_world_data",
@@ -575,7 +549,7 @@
     "id": "El_Scania",
     "type_powertrain": "El",
     "source_url": "https://www.scania.com/group/en/home/products-and-services/trucks/battery-electric-truck.html",
-    "source_type": "oem_existing",
+    "source_type": "commercially_available",
     "data": {
         "range": {
             "object_type": "real_world_data",
@@ -601,7 +575,7 @@
     "id": "El_Quantron",
     "type_powertrain": "El",
     "source_url": "https://www.quantron.net/en/q-truck/q-heavy/qhm-bev/",
-    "source_type": "oem_existing",
+    "source_type": "commercially_available",
     "data": {
         "range": {
             "object_type": "real_world_data",
@@ -653,7 +627,7 @@
     "id": "Diesel_Hale_trailer",
     "type_powertrain": "Diesel",
     "source_url": "https://haletrailer.com/blog/semi-truck-fuel-efficiency/",
-    "source_type": "website",
+    "source_type": "blog",
     "data": {
         "range": {
             "object_type": "real_world_data",
@@ -679,7 +653,7 @@
     "id": "Diesel_My_vehicle_talk",
     "type_powertrain": "Diesel",
     "source_url": "https://myvehicletalk.com/what-is-the-range-of-a-semi-truck/",
-    "source_type": "website",
+    "source_type": "blog",
     "data": {
         "range": {
             "object_type": "real_world_data",

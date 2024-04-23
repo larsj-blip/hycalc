@@ -1,0 +1,16 @@
+[   
+    {
+    "trial_project": {
+        "type": "trial_project",
+        "weight": 0.5
+        },
+    "limited_production": {
+        "type": "limited_production",
+        "weight": 0.8
+        },
+    "commercially_available": {
+        "type": "commercially_available",
+        "weight": 1
+        }
+    }
+]
