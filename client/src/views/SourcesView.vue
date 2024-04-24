@@ -18,5 +18,6 @@ iframe {
   display: flex;
   margin: auto auto;
   width: 80%;
+  height: 80%;
 }
 </style>
