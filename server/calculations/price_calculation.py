@@ -8,6 +8,7 @@ def fetch_electricity_price():
 
     # Assuming the API response contains the price under the 'price' key
     data_json = response.json()
+
     return data_json
 
 
@@ -50,26 +51,27 @@ def cost_of_producing_1_kg_hydrogen(price_electricity, electricity_needed):
 
 def dictionary_function(user_input_distance):
     data = fetch_electricity_price()
-    price_electricity = data['price'][20]
+    #price_electricity = data['price'][20]
+    price_electricity = 190
     electricity_needed = 0.05  # MWh needed to produce 1 kg of hydrogen
 
     cost_per_kg_treehundred = cost_of_producing_1_kg_hydrogen(price_electricity,
-                                                              electricity_needed) + 1.05 * 41 * price_electricity
+                                                              electricity_needed) + 0.00105  * price_electricity
 
     cost_per_kg_seveno = cost_of_producing_1_kg_hydrogen(price_electricity,
-                                                         electricity_needed) + 1.05 * 61.66 * price_electricity
+                                                         electricity_needed) + 0.00135 * price_electricity
 
     cost_per_kg_liquid = cost_of_producing_1_kg_hydrogen(price_electricity,
-                                                         electricity_needed) + 3.3 * 56 * price_electricity
+                                                         electricity_needed) + 0.01* price_electricity
 
-    total_cost_treefifty = (user_input_distance * cost_per_kg_treehundred / 13.166 )/1000 # kg hydrogen som trengs per kilometer kjørt
+    total_cost_treefifty = (user_input_distance * cost_per_kg_treehundred / 13.166 ) # kg hydrogen som trengs per kilometer kjørt
 
     total_cost_seveno = (
-                                    user_input_distance * cost_per_kg_seveno / 12.5) / 1000  # kg hydrogen som trengs per kilometer kjørt
+                                    user_input_distance * cost_per_kg_seveno / 12.5) # kg hydrogen som trengs per kilometer kjørt
     total_cost_liquid = (
-                                    user_input_distance * cost_per_kg_liquid / 14.65) / 1000  # kg hydrogen som trengs per kilometer kjørt
+                                    user_input_distance * cost_per_kg_liquid / 14.65) # kg hydrogen som trengs per kilometer kjørt
     total_cost_gas = user_input_distance * 0.10 * 2.172
-    total_cost_electric = user_input_distance * price_electricity * 0.20
+    total_cost_electric = user_input_distance * price_electricity * 0.0011
 
     cost_dictionary = {
         "CH2_350bar": total_cost_treefifty,
