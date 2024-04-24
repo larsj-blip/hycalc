@@ -24,10 +24,6 @@ function update_values_in_store() {
       <label for="distance_traveled">Distance traveled</label>
       <input class="form-control" type="number" id="distance_traveled" v-model="distance_traveled" placeholder="100"/>
     </div>
-    <div class="form-group">
-      <label for="payload_weight">Payload weight</label>
-    <input class="form-control" type="number" id="payload_weight" v-model="payload_weight" placeholder="400"/>
-    </div>
   </form>
 
   <button @click="$emit('showResults')">Calculate</button>

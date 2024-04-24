@@ -15,7 +15,7 @@ const travel_data_headers = {
   minutes_spent_refueling: 'Minutes spent refueling',
   number_of_refuels: 'Number of refuels during the trip',
   percent_left_in_tank: 'Percent of fuel left in the tank after the trip',
-  price: 'Fuel costs'
+  price: 'Fuel costs (EUR)'
 }
 const refueling_data = shallowRef(null)
 const store = useFormStore()
@@ -64,7 +64,7 @@ onMounted(() => {
       <tr data-test="result_row">
         <td>{{ fuel_type_headers[data_object.type] }}</td>
         <td v-for='(_, datapoint_name) in travel_data_headers' >
-          {{ data_object[datapoint_name] }}
+          {{ parseFloat(data_object[datapoint_name]).toFixed(2)}}
         </td>
       </tr>
       </tbody>
