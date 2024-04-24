@@ -52,19 +52,7 @@ Cost_per_kg_liquid = cost_of_producing_1_kg_hydrogen()+0.01*Price_electricity  #
 
 
 
-Total_cost_treefifty = User_input_distance* Cost_per_kg_treehundred  / 13.166 # kg hydrogen som trengs per kilometer kjørt
 
-
-Total_cost_seveno = User_input_distance* Cost_per_kg_seveno / 12.5  # kg hydrogen som trengs per kilometer kjørt
-
-
-Total_cost_liquid = User_input_distance*Cost_per_kg_liquid / 14.65 # kg hydrogen som trengs per kilometer kjørt
-
-#Calculating gas
-
-Total_cost_gas = User_input_distance* 0.10 *21.72
-
-Total_cost_electric = User_input_distance*Price_electricity*0.001 #KWh/km Forandret denne til 0.0011
 
 #All data in euros
 
