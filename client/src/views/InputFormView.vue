@@ -51,6 +51,8 @@ button {
 button:hover {
   background-color: #0056b3;
 }
-
+form {
+  padding: 1% 10%;
+}
 
 </style>
