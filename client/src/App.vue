@@ -93,8 +93,7 @@ nav a:first-of-type {
 
   nav {
     font-size: 1rem;
-    margin: auto auto 2rem;
-    padding: 1rem 0 1rem;
+    padding: 1rem 10% 1rem;
   }
 }
 
