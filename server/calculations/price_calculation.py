@@ -51,25 +51,26 @@ def cost_of_producing_1_kg_hydrogen(price_electricity, electricity_needed):
 
 def dictionary_function(user_input_distance):
     data = fetch_electricity_price()
-    #price_electricity = data['price'][20]
-    price_electricity = 190
+    # price_electricity = data['price'][20]
+    price_electricity = 190 #average price from 2023
     electricity_needed = 0.05  # MWh needed to produce 1 kg of hydrogen
 
     cost_per_kg_treehundred = cost_of_producing_1_kg_hydrogen(price_electricity,
-                                                              electricity_needed) + 0.00105  * price_electricity
+                                                              electricity_needed) + 0.00105 * price_electricity
 
     cost_per_kg_seveno = cost_of_producing_1_kg_hydrogen(price_electricity,
                                                          electricity_needed) + 0.00135 * price_electricity
 
     cost_per_kg_liquid = cost_of_producing_1_kg_hydrogen(price_electricity,
-                                                         electricity_needed) + 0.01* price_electricity
+                                                         electricity_needed) + 0.01 * price_electricity
 
-    total_cost_treefifty = (user_input_distance * cost_per_kg_treehundred / 13.166 ) # kg hydrogen som trengs per kilometer kjørt
+    total_cost_treefifty = (
+                user_input_distance * cost_per_kg_treehundred / 12.65)  # kg hydrogen som trengs per kilometer kjørt
 
     total_cost_seveno = (
-                                    user_input_distance * cost_per_kg_seveno / 12.5) # kg hydrogen som trengs per kilometer kjørt
+            user_input_distance * cost_per_kg_seveno / 12)  # kg hydrogen som trengs per kilometer kjørt
     total_cost_liquid = (
-                                    user_input_distance * cost_per_kg_liquid / 14.65) # kg hydrogen som trengs per kilometer kjørt
+            user_input_distance * cost_per_kg_liquid / 11.9)  # kg hydrogen som trengs per kilometer kjørt
     total_cost_gas = user_input_distance * 0.10 * 2.172
     total_cost_electric = user_input_distance * price_electricity * 0.0011
 
