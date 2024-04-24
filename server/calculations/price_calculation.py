@@ -12,8 +12,9 @@ def fetch_electricity_price():
     return data_json
 
 data = fetch_electricity_price()
-Price_electricity = data['price'][20]
-Electricity_needed = 0.05 #MWh needed to produce 1 kg of hydrogen
+#Price_electricity = data['price'][20] #Euro/MWh
+Electricity_needed = 0.055 #MWh needed to produce 1 kg of hydrogen
+Price_electricity = 190 #Euro/MWh
 
 
 
@@ -31,13 +32,13 @@ def cost_of_producing_1_kg_hydrogen():
 
 
 
-Cost_per_kg_treehundred = cost_of_producing_1_kg_hydrogen()+1.05*41*Price_electricity
+Cost_per_kg_treehundred = cost_of_producing_1_kg_hydrogen()+0.00105*Price_electricity
 
 
-Cost_per_kg_seveno = cost_of_producing_1_kg_hydrogen()+1.05*61.66*Price_electricity
+Cost_per_kg_seveno = cost_of_producing_1_kg_hydrogen()+0.00135*Price_electricity
 
 
-Cost_per_kg_liquid = cost_of_producing_1_kg_hydrogen()+10*56*Price_electricity
+Cost_per_kg_liquid = cost_of_producing_1_kg_hydrogen()+0.01*Price_electricity  #MWh/kg * Euro/MWh
 
 
 
@@ -46,7 +47,7 @@ Cost_per_kg_liquid = cost_of_producing_1_kg_hydrogen()+10*56*Price_electricity
     #700: 12.5 km/kg
     #Liquid: 14.65 km/kg
 
-
+#Price electricity = Euro/MWh
 #INPUT USER DISTANCE
 
 
@@ -63,9 +64,9 @@ Total_cost_liquid = User_input_distance*Cost_per_kg_liquid / 14.65 # kg hydrogen
 
 Total_cost_gas = User_input_distance* 0.10 *21.72
 
-Total_cost_electric = User_input_distance*Price_electricity*0.20
+Total_cost_electric = User_input_distance*Price_electricity*0.001 #KWh/km Forandret denne til 0.0011
 
-
+#All data in euros
 
 def dictionary_fuction(User_input_distance):
     Total_cost_treefifty = User_input_distance * Cost_per_kg_treehundred / 13.166  # kg hydrogen som trengs per kilometer kjørt
@@ -74,9 +75,9 @@ def dictionary_fuction(User_input_distance):
 
     Total_cost_liquid = User_input_distance * Cost_per_kg_liquid / 14.65  # kg hydrogen som trengs per kilometer kjørt
 
-    Total_cost_gas = User_input_distance * 0.10 * 21.72
+    Total_cost_gas = User_input_distance * 0.10 * 2.172
 
-    Total_cost_electric = User_input_distance * Price_electricity * 0.20
+    Total_cost_electric = User_input_distance * Price_electricity * 0.0011 #MWh/km
 
     Cost_dictionary = {
         "treefifty": Total_cost_treefifty,
