@@ -16,8 +16,8 @@ import {onMounted} from "vue";
 <style scoped>
 iframe {
   display: flex;
-  margin: auto auto;
+  margin: 2rem auto;
   width: 80%;
-  height: 80%;
+  height: 30rem;
 }
 </style>
