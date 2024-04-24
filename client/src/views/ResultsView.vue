@@ -64,7 +64,7 @@ onMounted(() => {
       <tr data-test="result_row">
         <td>{{ fuel_type_headers[data_object.type] }}</td>
         <td v-for='(_, datapoint_name) in travel_data_headers' >
-          {{ parseFloat(data_object[datapoint_name]).toFixed(2)}}
+          {{ parseFloat(data_object[datapoint_name]).toFixed(0)}}
         </td>
       </tr>
       </tbody>
