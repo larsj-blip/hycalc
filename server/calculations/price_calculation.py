@@ -89,7 +89,7 @@ def dictionary_fuction(User_input_distance):
     }
 
     return Cost_dictionary
-if __name__ == "__main__":
+
 
 
 
